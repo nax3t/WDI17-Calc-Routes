@@ -11,10 +11,10 @@ Create a calc controller with an index action (and view)
 > ```$ rails g controller calc index```
 
 Open your routes file ('ctrl + p' to search for a file) and set root to calc#index
-> ```$ root 'calc#index'```
+> ```root 'calc#index'```
 
 Create routes for add, subtract(sub), divide(div), multiply(mult)
-> ```$ get 'add/:x/:y' => 'calc#add'```
+> ```get 'add/:x/:y' => 'calc#add'```
 
 Create corresponding actions in the calc controller
 
