@@ -1,28 +1,52 @@
-== README
+### Setup Notes
+*the $ sign indicates that you are in terminal (command line for Windows users), do not copy the $ sign*
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create a new rails app
+> ```$ rails new app_name```
 
-Things you may want to cover:
+Run bundle install
+> ```$ bundle```
 
-* Ruby version
+Create a calc controller with an index action (and view)
+> ```$ rails g controller calc index```
 
-* System dependencies
+Open your routes file ('ctrl + p' to search for a file) and set root to calc#index
+> ```$ root 'calc#index'```
 
-* Configuration
+Create routes for add, subtract(sub), divide(div), multiply(mult)
+> ```$ get 'add/:x/:y' => 'calc#add'```
 
-* Database creation
+Create corresponding actions in the calc controller
 
-* Database initialization
+    def index
+    end
 
-* How to run the test suite
+	def add
+		x = params[:x]
+		y = params[:y]
+		@result = x.to_i + y.to_i
+		render :index
+	end
 
-* Services (job queues, cache servers, search engines, etc.)
+	def sub
+		x = params[:x]
+		y = params[:y]
+		@result = x.to_i - y.to_i
+		render :index
+	end
 
-* Deployment instructions
+	def div
+		x = params[:x]
+		y = params[:y]
+		@result = x.to_i / y.to_i
+		render :index
+	end
 
-* ...
+	def mult
+		x = params[:x]
+		y = params[:y]
+		@result = x.to_i * y.to_i
+		render :index
+	end
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```*see actual code for comments```
